@@ -1,0 +1,47 @@
+2014-10-17 19:45:34,460 INFO: Starting: ['novoalign', '-o', 'SAM', '-d', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix', '-f', '/mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq', '/mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq']
+2014-10-17 19:45:49,347 INFO: # novoalign (V3.02.07 - Build Jun 30 2014 @ 13:19:37 - A short read aligner with qualities.
+2014-10-17 19:45:49,347 INFO: # (C) 2008,2009,2010,2011 NovoCraft Technologies Sdn Bhd.
+2014-10-17 19:45:49,347 INFO: # License file: /home/ubuntu/software/novocraft/novoalign.lic
+2014-10-17 19:45:49,347 INFO: # Licensed to CRI-Chicago
+2014-10-17 19:45:49,347 INFO: #  novoalign -o SAM -d /mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix -f /mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq /mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq
+2014-10-17 19:45:49,347 INFO: # Starting at Fri Oct 17 19:45:34 2014
+2014-10-17 19:45:49,347 INFO: # Interpreting input files as Sanger FASTQ.
+2014-10-17 19:45:49,348 INFO: # Index Build Version: 3.2
+2014-10-17 19:45:49,348 INFO: # Hash length: 14
+2014-10-17 19:45:49,348 INFO: # Step size: 2
+2014-10-17 19:45:49,348 INFO: #       Paired Reads:      300
+2014-10-17 19:45:49,348 INFO: #       Proper Pairs:      263 (87.7%)
+2014-10-17 19:45:49,348 INFO: #     Read Sequences:      600
+2014-10-17 19:45:49,348 INFO: #   Unique Alignment:      553 (92.2%)
+2014-10-17 19:45:49,348 INFO: #       Multi Mapped:       18 ( 3.0%)
+2014-10-17 19:45:49,348 INFO: #   No Mapping Found:        0 ( 0.0%)
+2014-10-17 19:45:49,348 INFO: # QC Failures...
+2014-10-17 19:45:49,348 INFO: #        Read Length:       29 ( 4.8%)
+2014-10-17 19:45:49,348 INFO: #       Elapsed Time: 0.228 (secs.)
+2014-10-17 19:45:49,348 INFO: #           CPU Time: 0.56 (secs.)
+2014-10-17 19:45:49,349 INFO: # Fragment Length Distribution
+2014-10-17 19:45:49,349 INFO: #	From	To	Count
+2014-10-17 19:45:49,349 INFO: #	75	89	6
+2014-10-17 19:45:49,349 INFO: #	90	104	17
+2014-10-17 19:45:49,349 INFO: #	105	119	27
+2014-10-17 19:45:49,349 INFO: #	120	134	46
+2014-10-17 19:45:49,349 INFO: #	135	149	30
+2014-10-17 19:45:49,349 INFO: #	150	164	37
+2014-10-17 19:45:49,349 INFO: #	165	179	27
+2014-10-17 19:45:49,349 INFO: #	180	194	14
+2014-10-17 19:45:49,349 INFO: #	195	209	10
+2014-10-17 19:45:49,349 INFO: #	210	224	9
+2014-10-17 19:45:49,349 INFO: #	225	239	8
+2014-10-17 19:45:49,349 INFO: #	240	254	3
+2014-10-17 19:45:49,350 INFO: #	255	269	4
+2014-10-17 19:45:49,350 INFO: #	270	284	4
+2014-10-17 19:45:49,350 INFO: #	285	299	1
+2014-10-17 19:45:49,350 INFO: #	300	314	2
+2014-10-17 19:45:49,350 INFO: #	315	329	0
+2014-10-17 19:45:49,350 INFO: #	330	344	1
+2014-10-17 19:45:49,350 INFO: #	345	359	0
+2014-10-17 19:45:49,350 INFO: #	360	374	2
+2014-10-17 19:45:49,350 INFO: # Mean   157, Std Dev  50.2
+2014-10-17 19:45:49,350 INFO: # Done at Fri Oct 17 19:45:48 2014
+2014-10-17 19:45:49,350 INFO: Completed: ['novoalign', '-o', 'SAM', '-d', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix', '-f', '/mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq', '/mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq']
+2014-10-17 19:45:49,351 INFO: TIME_novoalign:	SRR292250	0.24817596674

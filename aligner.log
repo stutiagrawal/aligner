@@ -1,0 +1,13 @@
+2014-10-17 18:30:50,551 INFO: Starting: ['novoalign', '-o', 'SAM', '-d', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix', '-f', '/mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq', '/mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq']
+2014-10-17 18:31:03,489 INFO: # novoalign (V3.02.07 - Build Jun 30 2014 @ 13:19:37 - A short read aligner with qualities.
+2014-10-17 18:31:03,490 INFO: # (C) 2008,2009,2010,2011 NovoCraft Technologies Sdn Bhd.
+2014-10-17 18:31:03,490 INFO: # License file: /home/ubuntu/software/novocraft/novoalign.lic
+2014-10-17 18:31:03,490 INFO: # Licensed to CRI-Chicago
+2014-10-17 18:31:03,490 INFO: #  novoalign -o SAM -d /mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix -f /mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq /mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq
+2014-10-17 18:31:03,491 INFO: # Starting at Fri Oct 17 18:31:03 2014
+2014-10-17 18:31:03,491 INFO: # Interpreting input files as Sanger FASTQ.
+2014-10-17 18:31:03,491 INFO: Invalid argument
+2014-10-17 18:31:03,491 INFO: Error mapping file /mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix, size 0
+2014-10-17 18:31:03,492 ERROR: ['novoalign', '-o', 'SAM', '-d', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.nix', '-f', '/mnt/cinder/SCRATCH/data/SRR292250__1_test.fastq', '/mnt/cinder/SCRATCH/data/SRR292250__2_test.fastq'] exited with non-zero exitcode 255
+2014-10-17 18:31:03,492 ERROR: Alignment failed for novoalign: SRR292250
+2014-10-17 18:31:03,493 INFO: TIME_novoalign:	SRR292250	0.215689750512

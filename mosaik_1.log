@@ -1,0 +1,27 @@
+2014-10-17 18:25:34,440 INFO: Starting: ['MosaikAligner', '-in', '/mnt/cinder/SCRATCH/data/SRR292250.dat', '-out', '/mnt/cinder/SCRATCH/data/SRR292250_aligned.dat', '-ia', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.gz.dat', '-hs', '15', '-mm', '4', '-mhp', '100', '-act', '20', '-j', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.gz_jump.dat', '-p', '3', '-annpe', '/home/ubuntu/software/MOSAIK/src/networkFile/2.1.26.pe.100.0065.ann', '-annse', '/home/ubuntu/software/MOSAIK/src/networkFile/2.1.26.se.100.005.ann']
+2014-10-17 18:25:34,450 INFO: ------------------------------------------------------------------------------
+2014-10-17 18:25:34,450 INFO: Mosaik[1;31mAligner[0m 2.2.30                                                2014-06-27
+2014-10-17 18:25:34,450 INFO: Wan-Ping Lee & Michael Stromberg  Marth Lab, Boston College Biology Department
+2014-10-17 18:25:34,451 INFO: ------------------------------------------------------------------------------
+2014-10-17 18:25:34,451 INFO: 
+2014-10-17 18:25:34,451 INFO: WARNING: Paired-end data is detected, but the median fragment length is not specified.
+2014-10-17 18:25:34,451 INFO:          Accordingly, local alignment search is not enabled.
+2014-10-17 18:25:34,451 INFO:          The median fragment length (-mfl parameter) can be specified in MosaikBuild.
+2014-10-17 18:25:34,452 INFO: 
+2014-10-17 18:25:34,452 INFO: - Using the following alignment algorithm: all positions
+2014-10-17 18:25:34,452 INFO: - Using the following alignment mode: aligning reads to all possible locations
+2014-10-17 18:25:34,452 INFO: - Using a maximum mismatch threshold of 4
+2014-10-17 18:25:34,453 INFO: - Using a hash size of 15
+2014-10-17 18:25:34,453 INFO: - Using 3 processors
+2014-10-17 18:25:34,453 INFO: - Using a Smith-Waterman bandwidth of 11
+2014-10-17 18:25:34,453 INFO: - Using an alignment candidate threshold of 20bp.
+2014-10-17 18:25:34,453 INFO: - Setting hash position threshold to 100
+2014-10-17 18:25:34,454 INFO: - Using a jump database for hashing. Storing keys & positions in memory.
+2014-10-17 18:32:13,633 INFO: - loading reference sequence... finished.
+2014-10-17 18:39:56,668 INFO: - loading jump key database into memory... finished.
+2014-10-17 18:40:19,947 INFO: - loading jump positions database into memory...
+2014-10-17 18:40:19,949 INFO: terminate called after throwing an instance of 'std::bad_alloc'
+2014-10-17 18:40:19,949 INFO:   what():  std::bad_alloc
+2014-10-17 18:40:19,949 ERROR: ['MosaikAligner', '-in', '/mnt/cinder/SCRATCH/data/SRR292250.dat', '-out', '/mnt/cinder/SCRATCH/data/SRR292250_aligned.dat', '-ia', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.gz.dat', '-hs', '15', '-mm', '4', '-mhp', '100', '-act', '20', '-j', '/mnt/cinder/SCRATCH/data/human_g1k_v37_decoy.fasta.gz_jump.dat', '-p', '3', '-annpe', '/home/ubuntu/software/MOSAIK/src/networkFile/2.1.26.pe.100.0065.ann', '-annse', '/home/ubuntu/software/MOSAIK/src/networkFile/2.1.26.se.100.005.ann'] exited with non-zero exitcode -6
+2014-10-17 18:40:19,970 ERROR: Alignment failed for /mnt/cinder/SCRATCH/data/SRR292250.dat
+2014-10-17 18:40:19,987 INFO: TIME_MosaikAligner Reads:	/mnt/cinder/SCRATCH/data/SRR292250_aligned.dat	14.7588314811
