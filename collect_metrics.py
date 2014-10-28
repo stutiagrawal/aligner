@@ -64,7 +64,8 @@ def collect_metrics(dirname, program):
                 cpu_time[pos] = float(cpu)
                 user_time[pos] = float(user)
                 mem_time[pos] = float(mem)
-
+    for i in xrange(len(threads)):
+        print "%s\t%s\t%s\t%s\t%s" %(threads[i], time_elapsed[i], cpu_time[i], user_time[i], mem_time[i])
     create_graph(threads, time_elapsed, "Elapsed time", "%s_elapsed" %(program), "No. of threads", "Time(h)")
     create_graph(threads, cpu_time, "CPU time", "%s_CPU_time" %(program), "No. of threads", "Time(h)")
     create_graph(threads, user_time, "User_time", "%s_user_time" %(program), "No. of threads", "Time(h)")
