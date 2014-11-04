@@ -45,7 +45,7 @@ def align_mosaik(reads_1, reads_2, reference, platform, num_proc, outdir, ann_p,
 
         if(not(os.path.isfile(ref_build))):
             #Build the reference
-            cmd = ['MosaikBuild', '-fr', reference, '-oa' , ref_build]
+            cmd = ['time', '/usr/bin/time', 'MosaikBuild', '-fr', reference, '-oa' , ref_build]
             error_msg = "Build failed for %s" %(reference)
             program = "MosaikBuild_reference"
             run_command(cmd, error_msg, program, ref_build, logger=default_logger)
@@ -57,7 +57,7 @@ def align_mosaik(reads_1, reads_2, reference, platform, num_proc, outdir, ann_p,
             #Create the jump database
 
             assert(os.path.isfile(ref_build))
-            cmd = ['MosaikJump', '-ia', ref_build, '-out', ref_jump, '-hs', '15']
+            cmd = ['time', '/usr/bin/time', 'MosaikJump', '-ia', ref_build, '-out', ref_jump, '-hs', '15']
             error_msg = "Build failed for jump database %s" %(ref_jump)
             program = 'MosaikJump_reference'
             run_command(cmd, error_msg, program, ref_jump, logger=default_logger)
@@ -68,7 +68,7 @@ def align_mosaik(reads_1, reads_2, reference, platform, num_proc, outdir, ann_p,
         if(not(os.path.isfile(reads_build))):
             #Build the reads
 
-            cmd = ['MosaikBuild', '-q', reads_1, '-q2', reads_2, '-out', reads_build, '-st', platform]
+            cmd = ['time', '/usr/bin/time', 'MosaikBuild', '-q', reads_1, '-q2', reads_2, '-out', reads_build, '-st', platform]
             error_msg = "Build failed for %s and %s" %(reads_1, reads_2)
             program = 'MosaikBuild Reads'
             run_command(cmd, error_msg, program, reads_build, logger=default_logger)
@@ -77,7 +77,7 @@ def align_mosaik(reads_1, reads_2, reference, platform, num_proc, outdir, ann_p,
             #Align the reads with the reference
 
             output = "%s_aligned_%s.dat" %(os.path.join(outdir, sample_name), num_proc)
-            cmd = ['MosaikAligner', '-in', reads_build, '-out', output, '-ia', ref_build, '-hs', '15', '-mm', '4', '-mhp', '100', '-act', '20', '-j', ref_jump, '-p', num_proc, '-annpe', ann_p, '-annse', ann_s]
+            cmd = ['time', '/usr/bin/time', 'MosaikAligner', '-in', reads_build, '-out', output, '-ia', ref_build, '-hs', '15', '-mm', '4', '-mhp', '100', '-act', '20', '-j', ref_jump, '-p', num_proc, '-annpe', ann_p, '-annse', ann_s]
             error_msg = "Alignment failed for %s" %(reads_build)
             program = 'MosaikAligner Reads'
             run_command(cmd, error_msg, program, output, logger=default_logger)
