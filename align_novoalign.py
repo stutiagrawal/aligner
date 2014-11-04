@@ -46,7 +46,7 @@ def align_novo(reads_1, reads_2, reference, platform, num_proc, outdir, logger=d
             cmd = ['time', '/usr/bin/time', 'novoindex', ref_build, reference]
         elif platform == "solid":
             ref_build = "%s.ncx" %(os.path.join(outdir, ref_name))
-            cmd = ['time', '/usr/bin/time/', 'novoindex', '-c', ref_build, reference]
+            cmd = ['time', '/usr/bin/time', 'novoindex', '-c', ref_build, reference]
         error_msg = "build failed for %s" %(ref_build)
         if(not(os.path.isfile(ref_build))):
             run_command(cmd, error_msg, "Novoindex", reference)
@@ -56,7 +56,7 @@ def align_novo(reads_1, reads_2, reference, platform, num_proc, outdir, logger=d
             sample_name = reads_1.split("/")[-1].split("_")[0]
             align_file = "%s_novo.sam" %(os.path.join(outdir, sample_name))
             aln = open(align_file, "w")
-            cmd = ['time', '/usr/bin/time/', 'novoalign','-o', 'SAM', '-c', num_proc, '-d', ref_build, '-f', reads_1, reads_2]
+            cmd = ['time', '/usr/bin/time', 'novoalign','-o', 'SAM', '-c', num_proc, '-d', ref_build, '-f', reads_1, reads_2]
             error_msg = "Alignment failed for novoalign: %s" %(sample_name)
             run_command(cmd, error_msg, "novoalign", sample_name, output=aln)
             aln.close()
