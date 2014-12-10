@@ -44,44 +44,44 @@ Originally from https://github.com/chapmanb/bcbio-nextgen/blob/master/bcbio/prov
         stdout_value = output_file
 
     logger.info('Starting: %s' % cmd)
-    s = subprocess.Popen(cmd, shell=shell_arg, executable=executable_arg,
+    s= subprocess.Popen(cmd, shell=shell_arg, executable=executable_arg,
                          stdout=stdout_value,
-                         stderr=subprocess.PIPE,
+                         stderr=subprocess.STDOUT,
                          stdin=input_file)
+    stdoutdata, stderrdata = s.communicate()
+    exitcode = s.poll()
+    if exitcode is not None and exitcode != 0:
+        error_msg += " ".join(cmd)
+        error_msg += " ".join(stdoutdata)
+        error_msg += " ".join(stderrdata)
+        s.communicate()
+        s.stdout.close()
+        raise subprocess.CalledProcessError(exitcode, error_msg)
 
-    while 1:
-        if s.stdout:
-            stdout_line = s.stdout.readline()
-            if stdout_line:
-                logger.info(stdout_line.rstrip())
+    stdoutdata = stdoutdata.split("\n")
+    for line in stdoutdata:
+        logger.info(line)
+    if(stderrdata != None):
+        stderrdata = stderrdata.split("\n")
+        for line in stderrdata:
+            logger.info(line)
+
+    """
+    while True:
+        stdout_line = stdoutdata.readline()
+        if stdout_line:
+            debug_stdout.append(stdout_line)
+
+            logger.debug(stdout_line.rstrip())
 
         exitcode = s.poll()
-        if exitcode is not None:
-            if s.stdout:
-                for stdout_line in s.stdout:
-                    logger.info(stdout_line.rstrip())
-
-            if s.stderr:
-                for stderr_line in s.stderr:
-                    logger.info(stderr_line.rstrip())
-
-            if exitcode != 0:
-                logger.error("%s exited with non-zero exitcode %d" % (cmd, exitcode))
-                s.communicate()
-                if s.stdout:
-                    s.stdout.close()
-                if s.stderr:
-                    s.stderr.close()
-
-                return exitcode
-            else:
                 break
+        sys.stdout.flush()
 
     s.communicate()
-    if s.stdout:
-        s.stdout.close()
-    if s.stderr:
-        s.stderr.close()
+    s.stdout.close()
+    """
+
     logger.info('Completed: %s' % cmd)
     return exitcode
 
