@@ -33,7 +33,7 @@ def collect_metrics(dirname, program):
                         metric = line
 
                 metric = metric.split()
-                #`print metric
+                print metric
 		if(len(metric) >= 9):
                     user = float(metric[3].replace("user", ""))/3600.0
 
@@ -60,7 +60,7 @@ def collect_metrics(dirname, program):
 
 		pos = int(num_threads) - 1
                 threads[pos] = int(num_threads)
-                time_elapsed[pos] = elapsed
+                time_elapsed[pos] = (user + system)/int(num_threads)
                 cpu_time[pos] = float(cpu)
                 user_time[pos] = float(user)
                 mem_time[pos] = float(mem)
