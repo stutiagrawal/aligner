@@ -25,7 +25,7 @@ def run_pipeline(analysis_id, input_dir, star_pipeline, genome_dir, logger):
         if not os.path.isfile(output_bam):
             cmd = ['time', '/usr/bin/time', 'python', '%s' %star_pipeline, '--genomeDir', '%s' %genome_dir,
                     '--tarFileIn','%s' %filepath, '--workDir', '%s'%data_dir, '--out', '%s' %output_bam,
-                    '--runThreadN', '12']
+                    '--runThreadN', '12', '--genomeFastaFile', '/home/ubuntu/SCRATCH/grch38/with_decoy/bowtie2_2/bowtie2_buildname.fa']
             start_time = time.time()
             runBashCmd._do_run(cmd, logger=logger)
             end_time = time.time()
@@ -57,8 +57,9 @@ if __name__ == "__main__":
     for analysis_id in fp:
         analysis_id = analysis_id.rstrip()
         if not (os.path.isdir(os.path.join(args.input_dir, analysis_id))):
-            download_data(analysis_id, args.input_dir, args.cghub_key)
+            next
+            #download_data(analysis_id, args.input_dir, args.cghub_key)
         if(os.path.isdir(os.path.join(args.input_dir, analysis_id))):
-            log_file = "%s.log" %(os.path.join(args.input_dir, analysis_id, analysis_id))
+            log_file = "%s_star.log" %(os.path.join(args.input_dir, analysis_id, analysis_id))
             logger = setupLog.setup_logging(logging.INFO, analysis_id, log_file)
             run_pipeline(analysis_id, args.input_dir, args.star_pipeline, args.genome_dir, logger)
